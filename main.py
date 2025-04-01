@@ -46,6 +46,12 @@ transition_table = {
         lambda ap, pw, bl: (ap == pw, bl, None),
         authorized,
     )],
+
+    authorized: [(
+        'withdraw',
+        lambda ap, pw, bl: (ap <= bl, bl - ap, None),
+        authorized,
+    )],
 }
 
 # Implement the init_state here
@@ -66,6 +72,10 @@ if __name__ == "__main__":
             self._balance = init_balance
             self._password = password
             self._transition_table = transition_table
+
+            # print(self.state)
+            # print(self._transition_table)
+            # print('========')
 
         def next(
             self,
