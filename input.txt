@@ -1,9 +1,9 @@
 hacker
 10
-8
-withdraw 5
-login foo
+1
 login hacker
+login foo
+withdraw 5
 withdraw 15
 deposit 20
 withdraw 15

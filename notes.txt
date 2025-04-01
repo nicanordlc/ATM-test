@@ -1,0 +1,23 @@
+states:
+
+authorized
+unauthorized
+
+actions:
+
+login
+logout
+deposit
+withdraw
+balance
+
+flow:
+
+[unauthorized] --Input Password (correct)--> [authorized]
+[unauthorized] --Input Password (incorrect)--> [unauthorized]
+
+[authorized] --Log out--> [unauthorized]
+[authorized] --Deposit <amount>--> [authorized]
+[authorized] --Withdraw (balance enough)--> [authorized] (substract balance)
+[authorized] --Withdraw (balance not enough)--> [authorized] (balance unchanged)
+[authorized] --Balance--> [authorized] (show balance)
